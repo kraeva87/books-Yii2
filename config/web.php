@@ -12,9 +12,13 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'assetManager' => [
+            'baseUrl' => '/web/assets',
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'u7q6NlhUrYYN0esp_NJjzwJyV8viFzNX',
+            'baseUrl' => '',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -42,18 +46,17 @@ $config = [
             ],
         ],
         'db' => $db,
-
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'books' => 'book/index',
+                'book' => 'book/index',
+                //'<action>' => '<action>/index',//или 'book/<action>' => 'book/<action>'
                 'book/<id:\d+>' => 'book/view',
-                'book/edit/<id:\d+>' => 'book/edit',
-                'book/delete/<id:\d+>' => 'book/delete',
+                'book/<action>/<id:\d+>' => 'book/<action>',
                 'author' => 'author/index',
-                'author/edit/<id:\d+>' => 'author/edit',
-                'author/delete/<id:\d+>' => 'author/delete',
+                'author/<action>/<id:\d+>' => 'author/<action>',
+                'author/<action>' => 'author/<action>',
             ],
         ],
 

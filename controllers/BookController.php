@@ -4,11 +4,11 @@ namespace app\controllers;
 
 use Yii;
 use yii\web\Controller;
-//use yii\web\Response;
 use yii\data\Pagination;
 use app\models\Book;
 use app\models\Author;
 use app\models\Author_book;
+use app\models\Subscribe;
 use yii\web\UploadedFile;
 
 class BookController extends Controller
@@ -54,7 +54,7 @@ class BookController extends Controller
     public function actionAdd()
     {
         $book = new Book();
-        $this->handleBookSave($book);
+        $this->handleBookSave($book, true);
 
         $query = Author::find();
         $authors = $query->orderBy('fio')->asArray()->all();
@@ -88,7 +88,7 @@ class BookController extends Controller
         ]);
     }
 
-    protected function handleBookSave(Book $model)
+    protected function handleBookSave(Book $model, $new = false)
     {
         if ($model->load(Yii::$app->request->post())) {
             $model->upload = UploadedFile::getInstance($model, 'upload');
@@ -126,7 +126,7 @@ class BookController extends Controller
         $book = Book::findOne($id);
         Author_book::deleteAll(['id_book' => $id]);
         $book->delete();
-        return $this->redirect(['index']);
+        return $this->redirect('index');
     }
 
     //просмотр, добавление, редактирование, удаление

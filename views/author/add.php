@@ -2,10 +2,8 @@
 
 /** @var yii\web\Add $this */
 /** @var yii\widgets\ActiveForm $form */
-/** @var app\models\Author $authors */
 
 use yii\helpers\Html;
-use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 
 $this->title = "Новый автор";
@@ -23,10 +21,11 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
         'id' => 'add-author-form'
     ]); ?>
-    <?= $form->field($author, 'fio')->textInput()->label('ФИО') ?>
+    <?= $form->field($author, 'fio')->textInput(['autofocus' => true])->label('ФИО') ?>
 
-    <br>
-    <?= Html::submitButton('Добавить', ['class' => 'btn btn-primary']) ?>
+    <div class="form-group">
+        <?= Html::submitButton('Добавить', ['class' => 'btn btn-primary', 'name' => 'add-button']) ?>
+    </div>
 
     <?php ActiveForm::end(); ?>
 </div>

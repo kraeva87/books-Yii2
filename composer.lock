@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d0b53ee6ff938a3a3b4e7006374fb5c",
+    "content-hash": "2e88219941d50f8c62099ffa49b236ee",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -347,6 +347,50 @@
                 }
             ],
             "time": "2023-01-02T17:26:14+00:00"
+        },
+        {
+            "name": "et-soft/yii2-widget-select-year",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/et-soft/yii2-widget-select-year.git",
+                "reference": "10210cf42b9e79ae14d053f10b5de2a6432ab473"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/et-soft/yii2-widget-select-year/zipball/10210cf42b9e79ae14d053f10b5de2a6432ab473",
+                "reference": "10210cf42b9e79ae14d053f10b5de2a6432ab473",
+                "shasum": ""
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "etsoft\\widgets\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD 3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Evgeny Titov",
+                    "email": "etsoft2015@gmail.com"
+                }
+            ],
+            "description": "Widget for Yii2, created selectbox field with years",
+            "homepage": "https://github.com/et-soft/yii2-widget-select-year",
+            "keywords": [
+                "extension",
+                "form",
+                "widget",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/et-soft/yii2-widget-select-year/issues",
+                "source": "https://github.com/et-soft/yii2-widget-select-year/tree/master"
+            },
+            "time": "2015-08-02T07:05:19+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",

@@ -49,4 +49,13 @@ return array (
       '@yii/symfonymailer' => $vendorDir . '/yiisoft/yii2-symfonymailer/src',
     ),
   ),
+  'et-soft/yii2-widget-select-year' => 
+  array (
+    'name' => 'et-soft/yii2-widget-select-year',
+    'version' => '1.0.0.0',
+    'alias' => 
+    array (
+      '@etsoft/widgets' => $vendorDir . '/et-soft/yii2-widget-select-year',
+    ),
+  ),
 );

@@ -1,6 +1,7 @@
 <?php
 
 /** @var yii\web\Edit $this */
+/** @var yii\widgets\ActiveForm $form */
 
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
@@ -21,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
         'id' => 'new-book-form',
         'options' => ['enctype' => 'multipart/form-data']
-    ]) ?>
+    ]); ?>
     <?= $form->field($book, 'upload')->fileInput()->label('Фото главной страницы') ?>
     <?= $form->field($book, 'title')->textInput(['value' => $book->title ? $book->title : ''])->label('Название') ?>
     <?= $form->field($book, 'authors')->dropDownList(ArrayHelper::map($authors, 'id', 'fio'), [
@@ -34,8 +35,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= $form->field($book, 'year')->textInput(['value' => $book->year ? $book->year : ''])->label('Год выпуска') ?>
     <?= $form->field($book, 'description')->textarea(['rows' => '6', 'value' => $book->description ? $book->description : ''])->label('Описание') ?>
     <?= $form->field($book, 'isbn')->textInput(['value' => $book->isbn ? $book->isbn : ''])->label('ISBN') ?>
-    <br>
-    <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
+    <div class="form-group">
+        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary', 'name' => 'save-button']) ?>
+    </div>
 
     <?php ActiveForm::end() ?>
 </div>

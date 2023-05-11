@@ -1,6 +1,7 @@
 <?php
 
 /** @var yii\web\Edit $this */
+/** @var yii\widgets\ActiveForm $form */
 
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
@@ -22,8 +23,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'id' => 'new-author-form'
     ]) ?>
     <?= $form->field($author, 'fio')->textInput(['value' => $author->fio ? $author->fio : ''])->label('ФИО') ?>
-    <br>
-    <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
+    <div class="form-group">
+        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary', 'name' => 'save-button']) ?>
+    </div>
 
     <?php ActiveForm::end() ?>
 </div>

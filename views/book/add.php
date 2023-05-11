@@ -2,7 +2,6 @@
 
 /** @var yii\web\Add $this */
 /** @var yii\widgets\ActiveForm $form */
-/** @var app\models\Book $book */
 
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
@@ -25,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'options' => ['enctype' => 'multipart/form-data']
     ]); ?>
     <?= $form->field($book, 'upload')->fileInput()->label('Фото главной страницы') ?>
-    <?= $form->field($book, 'title')->textInput()->label('Название') ?>
+    <?= $form->field($book, 'title')->textInput(['autofocus' => true])->label('Название') ?>
     <?= $form->field($book, 'authors')->dropDownList(ArrayHelper::map($authors, 'id', 'fio'), [
         'prompt' => 'Выберите авторов...',
         'multiple' => 'true',
@@ -35,8 +34,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= $form->field($book, 'year')->textInput()->label('Год выпуска') ?>
     <?= $form->field($book, 'description')->textarea(['rows' => '6', 'value' => $book->description ? $book->description : ''])->label('Описание') ?>
     <?= $form->field($book, 'isbn')->textInput()->label('ISBN') ?>
-    <br>
-    <?= Html::submitButton('Добавить', ['class' => 'btn btn-primary']) ?>
+    <div class="form-group">
+        <?= Html::submitButton('Добавить', ['class' => 'btn btn-primary', 'name' => 'add-button']) ?>
+    </div>
 
     <?php ActiveForm::end(); ?>
 </div>

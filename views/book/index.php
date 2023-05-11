@@ -18,15 +18,15 @@ $this->params['breadcrumbs'][] = $this->title;
         </tr>
         <?php foreach ($books as $book): ?>
             <tr>
-                <td><a href="/web/book/<?=$book->id?>"><?= Html::encode("{$book->title}") ?></a></td>
+                <td><a href="/book/<?=$book->id?>"><?= Html::encode("{$book->title}") ?></a></td>
                 <?php if (!Yii::$app->user->isGuest) {
-                    echo '<td><a href="/web/book/edit/'.$book->id.'">edit</a> <a href="/web/book/delete/'.$book->id.'">delete</a></td>';
+                    echo '<td><a href="/book/edit/'.$book->id.'">Редактировать</a> <a href="/book/delete/'.$book->id.'">Удалить</a></td>';
                 } ?>
             </tr>
         <?php endforeach; ?>
     </table>
     <br>
-    <a href="/web/book/add/">Добавить</a>
+    <a href="/book/add/">Добавить</a>
 
     <?= LinkPager::widget(['pagination' => $pagination]) ?>
 </div>

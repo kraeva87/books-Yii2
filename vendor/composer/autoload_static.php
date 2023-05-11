@@ -36,6 +36,10 @@ class ComposerStaticInitd27fa88f7e287af0578afbf7409d70e6
             'yii\\bootstrap5\\' => 15,
             'yii\\' => 4,
         ),
+        'e' => 
+        array (
+            'etsoft\\widgets\\' => 15,
+        ),
         'c' => 
         array (
             'cebe\\markdown\\' => 14,
@@ -127,6 +131,10 @@ class ComposerStaticInitd27fa88f7e287af0578afbf7409d70e6
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
         ),
+        'etsoft\\widgets\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/et-soft/yii2-widget-select-year',
+        ),
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
@@ -217,8 +225,8 @@ class ComposerStaticInitd27fa88f7e287af0578afbf7409d70e6
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\EventDispatcher\\' => 
         array (
@@ -270,8 +278,8 @@ class ComposerStaticInitd27fa88f7e287af0578afbf7409d70e6
         ),
         'Codeception\\' => 
         array (
-            0 => __DIR__ . '/..' . '/codeception/stub/src',
-            1 => __DIR__ . '/..' . '/codeception/codeception/src/Codeception',
+            0 => __DIR__ . '/..' . '/codeception/codeception/src/Codeception',
+            1 => __DIR__ . '/..' . '/codeception/stub/src',
             2 => __DIR__ . '/..' . '/codeception/verify/src/Codeception',
         ),
     );

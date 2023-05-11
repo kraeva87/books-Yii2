@@ -15,8 +15,8 @@ class Book extends ActiveRecord
     public function rules()
     {
         return [
-            // title is required
-            [['title'], 'required'],
+            // title, year, description, isbn is required
+            [['title', 'year', 'description', 'isbn'], 'required'],
             [['upload'], 'file', 'extensions' => 'png, jpg'],
         ];
     }

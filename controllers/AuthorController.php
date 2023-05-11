@@ -7,6 +7,7 @@ use yii\web\Controller;
 //use yii\web\Response;
 use yii\data\Pagination;
 use app\models\Author;
+use app\models\Subscribe;
 
 class AuthorController extends Controller
 {
@@ -70,4 +71,27 @@ class AuthorController extends Controller
         $author->delete();
         return $this->redirect(['index']);
     }
+
+    public function actionSubscribe($id)
+    {
+        $author = Author::findOne($id);
+        $model = new Subscribe();
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->validate()) {
+                $model->id_author = $id;
+                if ($model->save(false)) {
+                    Yii::$app->session->setFlash('subscribeFormSubmitted');
+                    return $this->refresh();
+                }
+            } else {
+                // данные не корректны: $errors - массив содержащий сообщения об ошибках
+                $errors = $model->errors;
+            }
+        }
+        return $this->render('subscribe', [
+            'model' => $model,
+            'author' => $author
+        ]);
+    }
+
 }
